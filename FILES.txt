@@ -1,0 +1,418 @@
+ .gitignore                                         |       2 +-
+ .../M00_01_VectorizationWithSKLearn.ipynb          |      95 +-
+ M00_FinalProjects/M00_02_SpaCy.ipynb               |     725 +-
+ M00_FinalProjects/M00_04_MALLET.ipynb              |      24 +-
+ M00_FinalProjects/mazo                             |       1 +
+ M00_FinalProjects/novels-corpus.csv                |     321 +
+ M00_FinalProjects/novels-corpus.mallet             |     Bin 0 -> 4998802 bytes
+ M00_FinalProjects/novels-diagnostics.xml           |     444 +
+ M00_FinalProjects/novels-doc-topics.txt            |     321 +
+ M00_FinalProjects/novels-topic-keys.txt            |      20 +
+ M00_FinalProjects/novels-topic-phrase-report.xml   |     843 +
+ M00_FinalProjects/novels-topic-report.xml          |     443 +
+ .../novels-topic-word-weights-file.txt             |  544700 ++++
+ .../novels-word-topic-counts-file.txt              |   27235 +
+ M04_NLP/M04_01_Pipeline.ipynb                      |       4 +-
+ M07_FeaturesAndComponents/M07_01_PCA-REVISED.ipynb |       4 +-
+ M07_FeaturesAndComponents/M07_01_PCA.ipynb         |       4 +-
+ M07_FeaturesAndComponents/M07_02_SVD.ipynb         |       4 +-
+ M07_FeaturesAndComponents/Untitled.ipynb           |      52 +
+ .../eigendecomposition-notes.ipynb                 |      59 +
+ M08_TopicModels/M00_04_MALLET.ipynb                |    1000 +
+ M08_TopicModels/M08_01_GibbsSampler.ipynb          |      58 +-
+ M08_TopicModels/M08_02_LDASciKitLearn.ipynb        |       4 +-
+ M08_TopicModels/M08_02a_LDASciKitLearn.ipynb       |   17697 +-
+ M08_TopicModels/M08_03_UseTopicModelLib.ipynb      |   10644 +-
+ M08_TopicModels/M08_03a_PrepAIRBNB.ipynb           |      22 +-
+ M08_TopicModels/M08_03b_PrepNOVELS.ipynb           |    1230 +-
+ M08_TopicModels/M08_03c_PrepOKCUPID.ipynb          |    6283 +-
+ M08_TopicModels/images/gibbs-algo-text.png         |     Bin 0 -> 396980 bytes
+ M08_TopicModels/images/gibbs-algo.png              |     Bin 0 -> 191659 bytes
+ M08_TopicModels/images/relevance.png               |     Bin 0 -> 118380 bytes
+ M08_TopicModels/mazo                               |       1 +
+ M08a_Visualization/M08a_01_Nightingale.ipynb       |    7698 +
+ M08a_Visualization/images/batwing.jpg              |     Bin 0 -> 83322 bytes
+ M08a_Visualization/images/circle.png               |     Bin 0 -> 127920 bytes
+ .../images/mortalityofbriti00lond_bw.pdf           |     Bin 0 -> 2310884 bytes
+ M08a_Visualization/images/table-k2.png             |     Bin 0 -> 244680 bytes
+ M08a_Visualization/images/the-data.png             |     Bin 0 -> 606840 bytes
+ M08a_Visualization/images/the-data2.png            |     Bin 0 -> 1121318 bytes
+ M08a_Visualization/images/the-viz.png              |     Bin 0 -> 1433596 bytes
+ M08a_Visualization/images/version-01.png           |     Bin 0 -> 2664189 bytes
+ M08a_Visualization/topics-to-cover.md              |      23 +
+ M09_WordEmbedding/M09_02_PMI_SVD.ipynb             |    3207 +
+ .../M09_03_SkipgramRepresentation.ipynb            |    1025 +
+ M09_WordEmbedding/M09_04_word2vec.ipynb            |      58 +-
+ M09_WordEmbedding/M09_05_FastText.ipynb            |       6 +-
+ M09_WordEmbedding/images/novels-w2v-tsne-2.png     |     Bin 0 -> 986055 bytes
+ M09_WordEmbedding/images/novels-w2v-tsne.png       |     Bin 0 -> 1033532 bytes
+ M09_WordEmbedding/run_fasttext.ipynb               |     584 +
+ "M10_SentimentAnalysis/Icon\r"                     |       0
+ M10_SentimentAnalysis/M10_01_GeneralInquirer.ipynb |       6 +-
+ M10_SentimentAnalysis/M10_02_CombineLexicons.ipynb |    2863 +-
+ M10_SentimentAnalysis/M10_05_AirBnB.ipynb          |   37469 +-
+ M10_SentimentAnalysis/M10_07_Class-DEV.ipynb       |   17261 -
+ M10_SentimentAnalysis/M10_07_Class.ipynb           |     619 +-
+ M10_SentimentAnalysis/M10_07_CompareMethods.ipynb  |    4172 +
+ M11_Narrative/M11_02_SyuzhetNovels2.ipynb          |     935 +
+ M11_Narrative/M11_04_SyuzhetDemo.Rmd               |      92 +
+ ...ipynb => M12_01_ExportBooksWithSentiment.ipynb} |     430 +-
+ ...zhetNovels.ipynb => M12_02_SyuzhetNovels.ipynb} |     161 +-
+ ...1_03_Syuzhet_R.ipynb => M12_03_Syuzhet_R.ipynb} |      95 +-
+ ...ipynb => M12_04_SentimentAndSignificance.ipynb} |       4 +-
+ M11_Narrative/data_in/austen-melville-LIB2.csv     |      21 +
+ M11_Narrative/data_in/austen-melville-TOKEN2.csv   | 2070256 ++++++++++++++
+ .../data_in/austen-melville-VOCAB2-new.csv         |   40479 +
+ M11_Narrative/data_in/novels-LIB.csv               |      21 +
+ M11_Narrative/data_in/novels-TOKENS.csv            | 1500418 ++++++++++
+ M11_Narrative/data_in/novels-VOCAB.csv             |   27398 +
+ M11_Narrative/data_in/salex_combo.csv              |   12514 +
+ M11_Narrative/data_out/combo-LIB.csv               |      41 +
+ .../data_out/novels/austen-melville-105.csv        |   83605 +
+ .../data_out/novels/austen-melville-10712.csv      |  143245 +
+ .../data_out/novels/austen-melville-121.csv        |   77503 +
+ .../data_out/novels/austen-melville-1212.csv       |   33228 +
+ .../data_out/novels/austen-melville-1342.csv       |  122077 +
+ .../data_out/novels/austen-melville-13720.csv      |   96858 +
+ .../data_out/novels/austen-melville-13721.csv      |  102072 +
+ .../data_out/novels/austen-melville-141.csv        |  160356 ++
+ .../data_out/novels/austen-melville-15422.csv      |   65451 +
+ .../data_out/novels/austen-melville-158.csv        |  160878 ++
+ .../data_out/novels/austen-melville-15859.csv      |   26248 +
+ .../data_out/novels/austen-melville-161.csv        |  119845 +
+ .../data_out/novels/austen-melville-1900.csv       |  108052 +
+ .../data_out/novels/austen-melville-21816.csv      |   94550 +
+ .../data_out/novels/austen-melville-2701.csv       |  215464 ++
+ .../data_out/novels/austen-melville-34970.csv      |  155023 ++
+ .../data_out/novels/austen-melville-4045.csv       |  102334 +
+ .../data_out/novels/austen-melville-53861.csv      |   61219 +
+ .../data_out/novels/austen-melville-8118.csv       |  119163 +
+ .../data_out/novels/austen-melville-946.csv        |   23104 +
+ .../data_out/novels/novels-adventures.csv          |  105206 +
+ .../data_out/novels/novels-baskervilles.csv        |   59470 +
+ .../data_out/novels/novels-castleofotranto.csv     |   37755 +
+ .../data_out/novels/novels-christmascarole.csv     |   28747 +
+ M11_Narrative/data_out/novels/novels-dracula.csv   |  162046 ++
+ .../data_out/novels/novels-frankenstein.csv        |   75128 +
+ .../data_out/novels/novels-marieroget.csv          |   20213 +
+ M11_Narrative/data_out/novels/novels-monk.csv      |  136786 +
+ M11_Narrative/data_out/novels/novels-moonstone.csv |  197324 ++
+ .../data_out/novels/novels-northangerabbey.csv     |   77581 +
+ .../data_out/novels/novels-oldenglishbaron.csv     |   58195 +
+ .../data_out/novels/novels-pitandpendulum.csv      |    6164 +
+ M11_Narrative/data_out/novels/novels-reddeath.csv  |    2435 +
+ M11_Narrative/data_out/novels/novels-ruemorgue.csv |   13865 +
+ M11_Narrative/data_out/novels/novels-scarlet.csv   |   43928 +
+ .../data_out/novels/novels-secretadversary.csv     |   75367 +
+ .../data_out/novels/novels-signoffour.csv          |   43495 +
+ M11_Narrative/data_out/novels/novels-styles.csv    |   57113 +
+ M11_Narrative/data_out/novels/novels-udolpho.csv   |  292406 ++
+ M11_Narrative/data_out/novels/novels-usher.csv     |    7213 +
+ M11_Narrative/data_out/tokens-salex.db             |     Bin 0 -> 391950336 bytes
+ M11_Narrative/old/SAVE.ipynb                       |   33880 +
+ data/novels/novels-W2V.csv                         |   15712 +-
+ data/novels/novels-stanford.csv                    |   84282 +
+ data/okcupid/okcupid-DOC.csv                       | 2420410 +++++++++++++++++
+ data/okcupid/profiles.csv                          | 2420410 +++++++++++++++++
+ data/output/austen-LDA_PHI-20.csv                  |      40 +-
+ data/output/austen-LDA_THETA-20.csv                |     668 +-
+ data/output/austen-LDA_TOPIC-20.csv                |      40 +-
+ data/output/austen-NMF_PHI-20.csv                  |      21 +
+ data/output/austen-NMF_THETA-20.csv                |     335 +
+ data/output/austen-NMF_TOPIC-20.csv                |      21 +
+ data/output/melville-LDA_PHI-20.csv                |      40 +-
+ data/output/melville-LDA_THETA-20.csv              |    1680 +-
+ data/output/melville-LDA_TOPIC-20.csv              |      40 +-
+ data/output/melville-NMF_PHI-20.csv                |      21 +
+ data/output/melville-NMF_THETA-20.csv              |     851 +
+ data/output/melville-NMF_TOPIC-20.csv              |      21 +
+ data/output/space-demo copy.db                     |     Bin 0 -> 139202560 bytes
+ data/output/space-demo.db                          |     Bin 0 -> 264044544 bytes
+ data/salex-novels/__LIB0.csv                       |      21 +
+ data/salex-novels/__LIB1.csv                       |      21 +
+ data/salex-novels/austen-emma-1-158.csv            |  161981 ++
+ data/salex-novels/austen-ladysusan-1-946.csv       |   23258 +
+ ...-loveandfreindshipandotherearlyworks-1-1212.csv |   33384 +
+ data/salex-novels/austen-mansfieldpark-1-141.csv   |  161453 ++
+ data/salex-novels/austen-northangerabbey-0-9.csv   |   77581 +
+ data/salex-novels/austen-northangerabbey-1-121.csv |   78043 +
+ data/salex-novels/austen-persuasion-1-105.csv      |   84139 +
+ .../austen-prideandprejudice-1-1342.csv            |  122853 +
+ .../austen-senseandsensibility-1-161.csv           |  120705 +
+ data/salex-novels/christie-secretadversary-0-0.csv |   75367 +
+ data/salex-novels/christie-styles-0-1.csv          |   57113 +
+ data/salex-novels/collins-moonstone-0-2.csv        |  197324 ++
+ data/salex-novels/dickens-christmascarole-0-10.csv |   28747 +
+ data/salex-novels/doyle-adventures-0-3.csv         |  105206 +
+ data/salex-novels/doyle-baskervilles-0-4.csv       |   59470 +
+ data/salex-novels/doyle-scarlet-0-5.csv            |   43928 +
+ data/salex-novels/doyle-signoffour-0-6.csv         |   43495 +
+ data/salex-novels/lewis-monk-0-11.csv              |  136786 +
+ .../salex-novels/melville-israelpotter-1-15422.csv |   66069 +
+ ...ille-mardiandavoyagethithervoliiof2-1-13721.csv |  102724 +
+ ...ville-mardiandavoyagethithervoliof2-1-13720.csv |   97312 +
+ .../melville-mobydickorthewhale-1-2701.csv         |  217872 ++
+ ...elville-omooadventuresinthesouthseas-1-4045.csv |  102910 +
+ .../melville-pierreortheambiguities-1-34970.csv    |  155985 ++
+ .../melville-redburnhisfirstvoyage-1-8118.csv      |  119888 +
+ ...e-theappletreetableandothersketches-1-53861.csv |   61694 +
+ .../melville-theconfidenceman-1-21816.csv          |   95426 +
+ .../melville-thepiazzatales-1-15859.csv            |   26400 +
+ data/salex-novels/melville-typee-1-1900.csv        |  108313 +
+ data/salex-novels/melville-whitejacket-1-10712.csv |  144488 +
+ data/salex-novels/poe-marieroget-0-7.csv           |   20213 +
+ data/salex-novels/poe-pitandpendulum-0-12.csv      |    6164 +
+ data/salex-novels/poe-reddeath-0-13.csv            |    2435 +
+ data/salex-novels/poe-ruemorgue-0-8.csv            |   13865 +
+ data/salex-novels/poe-usher-0-14.csv               |    7213 +
+ data/salex-novels/radcliffe-udolpho-0-15.csv       |  292406 ++
+ data/salex-novels/reeve-oldenglishbaron-0-16.csv   |   58195 +
+ data/salex-novels/salex-novels.zip                 |     Bin 0 -> 29288143 bytes
+ data/salex-novels/shelley-frankenstein-0-17.csv    |   75128 +
+ data/salex-novels/stoker-dracula-0-18.csv          |  162046 ++
+ data/salex-novels/walpole-castleofotranto-0-19.csv |   37755 +
+ data/salex/salex_bing.csv                          |   13348 +-
+ data/salex/salex_combo.csv                         |   32683 +-
+ data/salex/salex_labmt.csv                         |   20446 +-
+ data/salex/salex_syuzhet.csv                       |       1 -
+ ...entiment Lexicon - Research EULA Sept 2017 .pdf |     Bin 0 -> 281081 bytes
+ .../Emoticon-AFFLEX-NEGLEX-bigrams.txt             |  274169 ++
+ .../Emoticon-AFFLEX-NEGLEX-unigrams.txt            |   55146 +
+ .../Paper1_NRC_Emoticon_AffLexNegLex.pdf           |     Bin 0 -> 916300 bytes
+ .../Paper2_NRC_Emoticon_AffLexNegLex.pdf           |     Bin 0 -> 137469 bytes
+ .../Paper3_NRC_Emoticon_AffLexNegLex.pdf           |     Bin 0 -> 152424 bytes
+ .../NRC-Emoticon-AffLexNegLex-v1.0/readme.txt      |     122 +
+ .../NRC-Emoticon-Lexicon-v1.0/Emoticon-bigrams.txt |  677698 +++++
+ .../NRC-Emoticon-Lexicon-v1.0/Emoticon-pairs.txt   |  480010 ++++
+ .../Emoticon-unigrams.txt                          |   62468 +
+ .../Paper1_NRC_Emoticon_Lexicon.pdf                |     Bin 0 -> 916300 bytes
+ .../Paper2_NRC_Emoticon_Lexicon.pdf                |     Bin 0 -> 137469 bytes
+ .../Paper3_NRC_Emoticon_Lexicon.pdf                |     Bin 0 -> 152424 bytes
+ .../NRC-Emoticon-Lexicon-v1.0/readme.txt           |     106 +
+ .../NRC-Hashtag-Emotion-Lexicon-v0.2.txt           |   32389 +
+ .../Paper1_NRC_Hashtag_Emotion_Lexicon.pdf         |     Bin 0 -> 305646 bytes
+ .../Paper2_NRC_Hashtag_Emotion_Lexicon.pdf         |     Bin 0 -> 164638 bytes
+ .../NRC-Hashtag-Emotion-Lexicon-v0.2/readme.txt    |     121 +
+ .../HS-AFFLEX-NEGLEX-bigrams.txt                   |  183354 ++
+ .../HS-AFFLEX-NEGLEX-unigrams.txt                  |   43949 +
+ .../Paper1_NRC_Hashtag_Sentiment_AffLexNegLex.pdf  |     Bin 0 -> 916300 bytes
+ .../Paper2_NRC_Hashtag_Sentiment_AffLexNegLex.pdf  |     Bin 0 -> 137469 bytes
+ .../Paper3_NRC_Hashtag_Sentiment_AffLexNegLex.pdf  |     Bin 0 -> 152424 bytes
+ .../readme.txt                                     |     123 +
+ .../HS-bigrams.txt                                 |  316531 +++
+ .../HS-pairs.txt                                   |  308808 +++
+ .../HS-unigrams.txt                                |   54129 +
+ .../Paper1_NRC_Hashtag_Sentiment_Lexicon.pdf       |     Bin 0 -> 916300 bytes
+ .../Paper2_NRC_Hashtag_Sentiment_Lexicon.pdf       |     Bin 0 -> 137469 bytes
+ .../Paper3_NRC_Hashtag_Sentiment_Lexicon.pdf       |     Bin 0 -> 152424 bytes
+ .../NRC-Hashtag-Sentiment-Lexicon-v1.0/readme.txt  |     114 +
+ .../sentiment-hashtags.txt                         |      78 +
+ .../NRC-AffectIntensity-Lexicon.txt                |    5815 +
+ .../Paper_NRC_Affect_Intensity_Lexicon.pdf         |     Bin 0 -> 695434 bytes
+ .../NRC-Affect-Intensity-Lexicon/README.txt        |     127 +
+ .../NRC-color-lexicon-senselevel-v0.92.txt         |   26625 +
+ .../Paper1_NRC_Colour_Lexicon.pdf                  |     Bin 0 -> 395193 bytes
+ .../Paper2_NRC_Colour_Lexicon.pdf                  |     Bin 0 -> 365942 bytes
+ .../NRC-Colour-Lexicon-v0.92/readme.txt            |     115 +
+ .../NRC-Emotion-Lexicon-Senselevel-v0.92.txt       |  242060 ++
+ .../NRC-Emotion-Lexicon-Wordlevel-v0.92.txt        |  141821 +
+ ...n-v0.92-In105Languages-Nov2017Translations.xlsx |     Bin 0 -> 16016367 bytes
+ .../NRC-Emotion-Lexicon-v0.92-InManyLanguages.xlsx |     Bin 0 -> 6092748 bytes
+ .../Older Versions/readme.txt                      |       3 +
+ .../Paper1_NRC_Emotion_Lexicon.pdf                 |     Bin 0 -> 486352 bytes
+ .../Paper2_NRC_Emotion_Lexicon.pdf                 |     Bin 0 -> 65828 bytes
+ .../NRC-Emotion-Lexicon-v0.92/readme.txt           |     151 +
+ .../NRC-VAD-Lexicon-ForVariousLanguages.txt        |   20008 +
+ .../NRC-VAD-Lexicon/NRC-VAD-Lexicon.txt            |   20008 +
+ .../OneFilePerDimension/a-scores.txt               |   20007 +
+ .../OneFilePerDimension/d-scores.txt               |   20007 +
+ .../OneFilePerDimension/v-scores.txt               |   20007 +
+ .../Afrikaans-af-NRC-VAD-Lexicon.txt               |   20008 +
+ .../Albanian-sq-NRC-VAD-Lexicon.txt                |   20008 +
+ .../Amharic-am-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Arabic-ar-NRC-VAD-Lexicon.txt                  |   20008 +
+ .../Armenian-hy-NRC-VAD-Lexicon.txt                |   20008 +
+ .../Azeerbaijani-az-NRC-VAD-Lexicon.txt            |   20008 +
+ .../Basque-eu-NRC-VAD-Lexicon.txt                  |   20008 +
+ .../Belarusian-be-NRC-VAD-Lexicon.txt              |   20008 +
+ .../Bengali-bn-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Bosnian-bs-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Bulgarian-bg-NRC-VAD-Lexicon.txt               |   20008 +
+ .../Catalan-ca-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Cebuano-ceb-NRC-VAD-Lexicon.txt                |   20008 +
+ .../Chinese (Simplified)-zh-CN-NRC-VAD-Lexicon.txt |   20008 +
+ ...Chinese (Traditional)-zh-TW-NRC-VAD-Lexicon.txt |   20008 +
+ .../Corsican-co-NRC-VAD-Lexicon.txt                |   20008 +
+ .../Croatian-hr-NRC-VAD-Lexicon.txt                |   20008 +
+ .../Czech-cs-NRC-VAD-Lexicon.txt                   |   20008 +
+ .../Danish-da-NRC-VAD-Lexicon.txt                  |   20008 +
+ .../Dutch-nl-NRC-VAD-Lexicon.txt                   |   20008 +
+ .../Esperanto-eo-NRC-VAD-Lexicon.txt               |   20008 +
+ .../Estonian-et-NRC-VAD-Lexicon.txt                |   20008 +
+ .../Finnish-fi-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../French-fr-NRC-VAD-Lexicon.txt                  |   20008 +
+ .../Frisian-fy-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Galician-gl-NRC-VAD-Lexicon.txt                |   20008 +
+ .../Georgian-ka-NRC-VAD-Lexicon.txt                |   20008 +
+ .../German-de-NRC-VAD-Lexicon.txt                  |   20008 +
+ .../Greek-el-NRC-VAD-Lexicon.txt                   |   20008 +
+ .../Gujarati-gu-NRC-VAD-Lexicon.txt                |   20008 +
+ .../Haitian Creole-ht-NRC-VAD-Lexicon.txt          |   20008 +
+ .../Hausa-ha-NRC-VAD-Lexicon.txt                   |   20008 +
+ .../Hawaiian-haw-NRC-VAD-Lexicon.txt               |   20008 +
+ .../Hebrew-iw-NRC-VAD-Lexicon.txt                  |   20008 +
+ .../Hindi-hi-NRC-VAD-Lexicon.txt                   |   20008 +
+ .../Hmong-hmn-NRC-VAD-Lexicon.txt                  |   20008 +
+ .../Hungarian-hu-NRC-VAD-Lexicon.txt               |   20008 +
+ .../Icelandic-is-NRC-VAD-Lexicon.txt               |   20008 +
+ .../OneFilePerLanguage/Igbo-ig-NRC-VAD-Lexicon.txt |   20008 +
+ .../Indonesian-id-NRC-VAD-Lexicon.txt              |   20008 +
+ .../Irish-ga-NRC-VAD-Lexicon.txt                   |   20008 +
+ .../Italian-it-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Japanese-ja-NRC-VAD-Lexicon.txt                |   20008 +
+ .../Javanese-jw-NRC-VAD-Lexicon.txt                |   20008 +
+ .../Kannada-kn-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Kazakh-kk-NRC-VAD-Lexicon.txt                  |   20008 +
+ .../Khmer-km-NRC-VAD-Lexicon.txt                   |   20008 +
+ .../Korean-ko-NRC-VAD-Lexicon.txt                  |   20008 +
+ .../Kurdish-ku-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Kyrgyz-ky-NRC-VAD-Lexicon.txt                  |   20008 +
+ .../OneFilePerLanguage/Lao-lo-NRC-VAD-Lexicon.txt  |   20008 +
+ .../Latin-la-NRC-VAD-Lexicon.txt                   |   20008 +
+ .../Latvian-lv-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Lithuanian-lt-NRC-VAD-Lexicon.txt              |   20008 +
+ .../Luxembourgish-lb-NRC-VAD-Lexicon.txt           |   20008 +
+ .../Macedonian-mk-NRC-VAD-Lexicon.txt              |   20008 +
+ .../Malagasy-mg-NRC-VAD-Lexicon.txt                |   20008 +
+ .../Malay-ms-NRC-VAD-Lexicon.txt                   |   20008 +
+ .../Malayalam-ml-NRC-VAD-Lexicon.txt               |   20008 +
+ .../Maltese-mt-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Maori-mi-NRC-VAD-Lexicon.txt                   |   20008 +
+ .../Marathi-mr-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Mongolian-mn-NRC-VAD-Lexicon.txt               |   20008 +
+ .../Myanmar (Burmese)-my-NRC-VAD-Lexicon.txt       |   20008 +
+ .../Nepali-ne-NRC-VAD-Lexicon.txt                  |   20008 +
+ .../Norwegian-no-NRC-VAD-Lexicon.txt               |   20008 +
+ .../Nyanja (Chichewa)-ny-NRC-VAD-Lexicon.txt       |   20008 +
+ .../Pashto-ps-NRC-VAD-Lexicon.txt                  |   20008 +
+ .../Persian-fa-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Polish-pl-NRC-VAD-Lexicon.txt                  |   20008 +
+ ...guese (Portugal, Brazil)-pt-NRC-VAD-Lexicon.txt |   20008 +
+ .../Punjabi-pa-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Romanian-ro-NRC-VAD-Lexicon.txt                |   20008 +
+ .../Russian-ru-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Samoan-sm-NRC-VAD-Lexicon.txt                  |   20008 +
+ .../Scots Gaelic-gd-NRC-VAD-Lexicon.txt            |   20008 +
+ .../Serbian-sr-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Sesotho-st-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Shona-sn-NRC-VAD-Lexicon.txt                   |   20008 +
+ .../Sindhi-sd-NRC-VAD-Lexicon.txt                  |   20008 +
+ .../Sinhala (Sinhalese)-si-NRC-VAD-Lexicon.txt     |   20008 +
+ .../Slovak-sk-NRC-VAD-Lexicon.txt                  |   20008 +
+ .../Slovenian-sl-NRC-VAD-Lexicon.txt               |   20008 +
+ .../Somali-so-NRC-VAD-Lexicon.txt                  |   20008 +
+ .../Spanish-es-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Sundanese-su-NRC-VAD-Lexicon.txt               |   20008 +
+ .../Swahili-sw-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Swedish-sv-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Tagalog (Filipino)-tl-NRC-VAD-Lexicon.txt      |   20008 +
+ .../Tajik-tg-NRC-VAD-Lexicon.txt                   |   20008 +
+ .../Tamil-ta-NRC-VAD-Lexicon.txt                   |   20008 +
+ .../Telugu-te-NRC-VAD-Lexicon.txt                  |   20008 +
+ .../OneFilePerLanguage/Thai-th-NRC-VAD-Lexicon.txt |   20008 +
+ .../Turkish-tr-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Ukrainian-uk-NRC-VAD-Lexicon.txt               |   20008 +
+ .../OneFilePerLanguage/Urdu-ur-NRC-VAD-Lexicon.txt |   20008 +
+ .../Uzbek-uz-NRC-VAD-Lexicon.txt                   |   20008 +
+ .../Vietnamese-vi-NRC-VAD-Lexicon.txt              |   20008 +
+ .../Welsh-cy-NRC-VAD-Lexicon.txt                   |   20008 +
+ .../Xhosa-xh-NRC-VAD-Lexicon.txt                   |   20008 +
+ .../Yiddish-yi-NRC-VAD-Lexicon.txt                 |   20008 +
+ .../Yoruba-yo-NRC-VAD-Lexicon.txt                  |   20008 +
+ .../OneFilePerLanguage/Zulu-zu-NRC-VAD-Lexicon.txt |   20008 +
+ .../NRC-VAD-Lexicon/Paper_NRC_VAD_Lexicon.pdf      |     Bin 0 -> 174156 bytes
+ .../NRC-VAD-Lexicon/README.txt                     |     176 +
+ .../NRC-Sentiment-Emotion-Lexicons/README.txt      |     178 +
+ .../sources/SentWordNet/SentiWordNet_3.0.0.txt     |  117686 +
+ .../General Inquirer Categories.html               |    1158 +
+ .../General Inquirer Categories.pdf                |     Bin 0 -> 389277 bytes
+ .../General Inquirer Categories_files/analytics.js |     474 +
+ .../banner-styles.css                              |     500 +
+ .../bundle-playback.js                             |       3 +
+ .../iconochive.css                                 |     116 +
+ .../General Inquirer Categories_files/inquirer.css |     147 +
+ .../General Inquirer Categories_files/wombat.js    |      21 +
+ data/salex/sources/general-inquirer/MergedInput 2  |       1 +
+ .../sources/general-inquirer/Wayback Machine.html  |     208 +
+ .../Wayback Machine_files/analytics.js             |     474 +
+ .../Wayback Machine_files/banner-styles.css        |     500 +
+ .../Wayback Machine_files/bundle-playback.js       |       3 +
+ .../Wayback Machine_files/iconochive.css           |     116 +
+ .../Wayback Machine_files/inqdict.html             |   11899 +
+ .../Wayback Machine_files/jquery-1.11.1.min.js     |       4 +
+ data/salex/sources/general-inquirer/gi.csv         |    3627 +
+ data/salex/sources/general-inquirer/gi2.csv        |    3627 +
+ data/salex/sources/general-inquirer/gi_wide.csv    |   11789 +
+ data/salex/sources/general-inquirer/index.html     |     143 +
+ data/salex/sources/general-inquirer/inqdict.zip    |     Bin 0 -> 219013 bytes
+ data/salex/sources/general-inquirer/inqtabs.zip    |     Bin 0 -> 302872 bytes
+ .../general-inquirer/inquirerbasicttabsclean       |   11789 +
+ data/salex/sources/labMT/labMTscores-arabic.csv    |   10000 +
+ data/salex/sources/labMT/labMTscores-chinese.csv   |   10000 +
+ data/salex/sources/labMT/labMTscores-english.csv   |   10222 +
+ data/salex/sources/labMT/labMTscores-french.csv    |   10000 +
+ data/salex/sources/labMT/labMTscores-german.csv    |   10000 +
+ data/salex/sources/labMT/labMTscores-hindi.csv     |   10000 +
+ .../salex/sources/labMT/labMTscores-indonesian.csv |   10001 +
+ data/salex/sources/labMT/labMTscores-korean.csv    |   10001 +
+ data/salex/sources/labMT/labMTscores-pashto.csv    |    9999 +
+ .../salex/sources/labMT/labMTscores-portuguese.csv |   10001 +
+ data/salex/sources/labMT/labMTscores-russian.csv   |   10001 +
+ data/salex/sources/labMT/labMTscores-spanish.csv   |   10001 +
+ data/salex/sources/labMT/labMTscores-urdu.csv      |   10000 +
+ data/salex/sources/labMT/labMTscoresStd-arabic.csv |   10000 +
+ .../salex/sources/labMT/labMTscoresStd-chinese.csv |   10000 +
+ .../salex/sources/labMT/labMTscoresStd-english.csv |   10222 +
+ data/salex/sources/labMT/labMTscoresStd-french.csv |   10000 +
+ data/salex/sources/labMT/labMTscoresStd-german.csv |   10000 +
+ .../sources/labMT/labMTscoresStd-indonesian.csv    |   10001 +
+ data/salex/sources/labMT/labMTscoresStd-korean.csv |   10001 +
+ .../sources/labMT/labMTscoresStd-portuguese.csv    |   10001 +
+ .../salex/sources/labMT/labMTscoresStd-russian.csv |   10001 +
+ .../salex/sources/labMT/labMTscoresStd-spanish.csv |   10001 +
+ data/salex/sources/labMT/labMTwords-arabic.csv     |   10000 +
+ data/salex/sources/labMT/labMTwords-chinese.csv    |   10000 +
+ data/salex/sources/labMT/labMTwords-english.csv    |   10222 +
+ data/salex/sources/labMT/labMTwords-french.csv     |   10000 +
+ data/salex/sources/labMT/labMTwords-german.csv     |   10000 +
+ data/salex/sources/labMT/labMTwords-hindi.csv      |   10000 +
+ data/salex/sources/labMT/labMTwords-indonesian.csv |   10001 +
+ data/salex/sources/labMT/labMTwords-korean.csv     |   10001 +
+ data/salex/sources/labMT/labMTwords-pashto.csv     |    9999 +
+ data/salex/sources/labMT/labMTwords-portuguese.csv |   10001 +
+ data/salex/sources/labMT/labMTwords-russian.csv    |   10001 +
+ data/salex/sources/labMT/labMTwords-spanish.csv    |   10001 +
+ data/salex/sources/labMT/labMTwords-urdu.csv       |   10000 +
+ data/salex/sources/labMT/labMTwordsEn-arabic.csv   |   10000 +
+ data/salex/sources/labMT/labMTwordsEn-chinese.csv  |   10000 +
+ data/salex/sources/labMT/labMTwordsEn-english.csv  |   10222 +
+ data/salex/sources/labMT/labMTwordsEn-french.csv   |   10000 +
+ data/salex/sources/labMT/labMTwordsEn-german.csv   |   10000 +
+ data/salex/sources/labMT/labMTwordsEn-hindi.csv    |   10000 +
+ .../sources/labMT/labMTwordsEn-indonesian.csv      |   10001 +
+ data/salex/sources/labMT/labMTwordsEn-korean.csv   |   10001 +
+ data/salex/sources/labMT/labMTwordsEn-pashto.csv   |    9999 +
+ .../sources/labMT/labMTwordsEn-portuguese.csv      |   10001 +
+ data/salex/sources/labMT/labMTwordsEn-russian.csv  |   10001 +
+ data/salex/sources/labMT/labMTwordsEn-spanish.csv  |   10001 +
+ data/salex/sources/labMT/labMTwordsEn-urdu.csv     |   10000 +
+ lib/etal.py                                        |     329 +
+ lib/mazo                                           |       1 +
+ lib/tapi.ini                                       |       4 +
+ lib/tapi.py                                        |     272 +
+ lib/textparser.py                                  |       3 +
+ lib/tokenvecorizor.py                              |      67 +
+ lib/topicexplorer.py                               |       4 +-
+ lib/topicmodel.py                                  |      19 +-
+ lib/w2v.py                                         |      11 +-
+ 417 files changed, 22156457 insertions(+), 107824 deletions(-)

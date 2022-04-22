@@ -1,0 +1,92 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# Set Up
+```{r}
+install.packages('syuzhet')
+install.packages("dplyr")
+```
+# Configuration
+```{r}
+method = 'nrc'
+fft_low_pass = 3
+dct_low_pass = 5
+```
+
+# Libraries
+```{r}
+library(syuzhet)
+library(repr)
+```
+
+# Main Function
+```{r}
+plotitall <- function (book_file, book_title) {
+
+    # Get the book and compute sentiment
+    book <- get_text_as_string(book_file)
+    book.s_v <- get_sentences(book)
+    book.sentiment_vector <- get_sentiment(book.s_v, method=method)
+    
+    # Plot the raw signal
+    plot(book.sentiment_vector, 
+         type ="l", 
+         main = book_title,
+         xlab = "Narrative Time", 
+         ylab = "Emotional Valence")
+    
+    # Get smoothed signal the old way
+    book.ft_values <- get_transformed_values(book.sentiment_vector, 
+                                     low_pass_size = fft_low_pass, 
+                                     x_reverse_len = 100,
+                                     scale_vals = TRUE, 
+                                     scale_range = FALSE)
+    
+    # Get smoothing signal the new way
+    book.dct_values <- get_dct_transform(book.sentiment_vector, 
+                                         scale_vals = TRUE, 
+                                         scale_range = FALSE)
+    
+    # Plot the old 
+    plot(book.ft_values,
+         type ="h", 
+         main = paste(book_title, " transformed (FFT)"), 
+         xlab = "narrative time", 
+         ylab = "Emotional Valence", col = "red")
+    
+    # Plot the new
+    plot(book.dct_values,
+         type ="h", 
+         main = paste(book_title, " transformed (DCT)"), 
+         xlab = "narrative time", 
+         ylab = "Emotional Valence", col = "red")
+    
+}
+```
+
+
+# Persuasion
+```{r}
+plotitall('data///syuzhet//persuasion.txt', 'Persuasion')
+```
+# Frankenstein
+
+```{r}
+plotitall('data//syuzhet//frankenstein.txt', "Frankenstein")
+```
+
+# Moby Dick
+```{r}
+plotitall('data//syuzhet//moby.txt', "Moby Dick")
+```
+
+
+# Dracula
+```{r}
+plotitall('data//syuzhet//dracula.txt', "Dracula")
+
+```
+
+

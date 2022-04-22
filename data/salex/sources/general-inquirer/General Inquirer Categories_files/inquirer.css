@@ -1,0 +1,147 @@
+/* CSS Document */
+
+
+body {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	margin-left: 15px;
+}
+
+p,li {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 145%;
+	font-weight: normal;
+	text-align: left;
+	padding: 0;
+	}
+	
+img {
+	display: inline;
+	border: 0;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	align: top;
+	}
+h1{
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	font-weight: bold;
+	line-height: 120%;
+	color: #550022;
+	text-align: left;
+	padding-left: 0px;
+	padding-right: 15px;
+	}
+	
+h2{
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	line-height: 120%;
+	font-weight: bold;
+	color:#550022;
+	text-align: left;
+	padding-left: 0px;
+	padding-right: 15px;
+	}
+	
+h3{
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	line-height: 120%;
+	font-weight: bold;
+	color:#550022;
+	text-align: left;
+	padding-left: 0px;
+	padding-right: 15px;
+	}
+
+h4{
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 100%;
+	font-weight: bold;
+	color:#000;
+	text-align: left;
+	padding-left: 0px;
+	padding-right: 15px;
+	}
+	
+td{
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 120%;
+	vertical-align: top;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	}
+th{
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: left;
+	line-height: 120%;
+	vertical-align: top;
+	padding-left: 15px; 
+	padding-right: 15px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	}
+
+
+a:link {
+	font-weight : bold; 
+	text-decoration : none;
+	color: #0033ff;
+	background: transparent; 
+	border-bottom:1px solid #0033ff;
+	padding-bottom: 2px;
+	}
+
+a:visited {
+	font-weight : bold;
+	text-decoration : none;
+	color:#003366;
+	background: transparent;
+	border-bottom:1px solid #003366;
+	padding-bottom: 2px;
+
+	}
+
+a:hover {
+	font-weight : bold;
+	text-decoration : none;
+	color: #000000;
+	background: transparent;
+	}
+
+a:active {
+	font-weight : bold;
+	text-decoration : none;
+	color: #000000;
+	background: transparent;	
+	}
+	
+/*
+     FILE ARCHIVED ON 12:01:08 Mar 31, 2019 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:57:09 Apr 09, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 57.276
+  exclusion.robots: 0.095
+  exclusion.robots.policy: 0.088
+  RedisCDXSource: 2.097
+  esindex: 0.009
+  LoadShardBlock: 36.405 (3)
+  PetaboxLoader3.datanode: 50.237 (4)
+  CDXLines.iter: 16.235 (3)
+  load_resource: 314.963
+  PetaboxLoader3.resolve: 38.672
+*/
