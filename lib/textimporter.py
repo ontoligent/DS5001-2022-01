@@ -3,7 +3,11 @@ import numpy as np
 
 class TextImporter():
     """
-    A text importing object designed for use with a single Gutenberg-type text files. Generates TOKENS and VOCAB dataframes.
+    
+    *** DEPRECATED ***
+
+    A text importing object designed for use with a single Gutenberg-type text files. 
+    Generates TOKENS and VOCAB dataframes.
     
     Sample parameter values:
 
