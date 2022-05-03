@@ -1,0 +1,42 @@
+digraph LDA {
+
+
+    // ΕΡΤΥΘΙΟΠΑΣΔΦΓΗΞΚΛΖΧΨΩΒΝΜ
+    // αζςσχεδψρφωτγβυηνθξμικολπ
+    
+    // D 
+    // K
+    // z 
+    // Θ
+    // Φ
+    
+    node [shape=circle]
+    edge [color=gray]
+
+    w [style=filled color=lightgray]
+
+    subgraph cluster1_K {
+        label=K
+        Φ -> w
+    }
+
+    subgraph cluster2_D {
+        label=D
+        style="border"
+        Θ -> z 
+        subgraph cluster_t {
+            label=N
+            z -> w
+        }
+    }
+
+    // Φ -> w
+    α -> Θ 
+    β -> Φ 
+
+    { rank=same; α  β};
+
+    
+
+
+}
